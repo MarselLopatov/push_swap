@@ -1,26 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sb.c                                               :+:      :+:    :+:   */
+/*   rrr.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cdoria <cdoria@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/02 21:57:20 by cdoria            #+#    #+#             */
-/*   Updated: 2022/02/03 14:32:03 by cdoria           ###   ########.fr       */
+/*   Created: 2022/02/03 15:08:09 by cdoria            #+#    #+#             */
+/*   Updated: 2022/02/03 15:09:03 by cdoria           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	sb(t_stack **stack)
+void	rrr(t_stack **stack_a, t_stack **stack_b)
 {
-	t_stack	*tmp;
-	
-	if (!*stack || !(*stack)->next)
-		return ;
-	tmp = (*stack)->next;
-	(*stack)->next = tmp->next;
-	tmp->next = (*stack);
-	*stack = tmp;
-	write(1, "sb\n", 3);
+	rra(stack_a);
+	rrb(stack_b);
+	write(1, "rrr\n", 4);
 }

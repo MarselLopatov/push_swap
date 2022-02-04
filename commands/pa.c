@@ -6,7 +6,7 @@
 /*   By: cdoria <cdoria@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/02 22:02:59 by cdoria            #+#    #+#             */
-/*   Updated: 2022/02/02 22:08:16 by cdoria           ###   ########.fr       */
+/*   Updated: 2022/02/03 14:33:33 by cdoria           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,13 @@
 void	pa(t_stack **from, t_stack **to)
 {
 	t_stack *tmp;
-	
+
 	if (!*from)
 		return ;
-	(*to)->next = (*from);
+	tmp = *from;
+	*from = tmp->next;
 	(*from)->next = NULL;
-
+	(*to)->next = (*from);
+	*to = tmp;
+	write(1, "pa\n", 3);
 }
