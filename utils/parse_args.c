@@ -6,7 +6,7 @@
 /*   By: cdoria <cdoria@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/04 16:40:44 by cdoria            #+#    #+#             */
-/*   Updated: 2022/02/05 02:06:16 by cdoria           ###   ########.fr       */
+/*   Updated: 2022/02/05 15:07:20 by cdoria           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,6 +70,18 @@ void	sort_arr(int *arr, int argc)
 	}
 }
 
+void	create_stack(int *arr, int argc, t_stack **stack)
+{
+	int i;
+	
+	i = 0;
+	while (i < argc)
+	{
+		ft_pushback(stack, ft_lstnew(arr[i], i));
+		i++;
+	}
+}
+
 void	parse_args(char **args, int argc, t_stack **stack)
 {
 	int	i;
@@ -84,9 +96,5 @@ void	parse_args(char **args, int argc, t_stack **stack)
 		i++;
 	}
 	sort_arr(arr, argc);
+	create_stack(arr, argc, stack);
 }
-// Пустая строка
-// ЗАДАЧА. отсортировать массив и записать все в стак
-
-
-// ft_pushback(stack, ft_lstnew(ft_atoi(args[i])));

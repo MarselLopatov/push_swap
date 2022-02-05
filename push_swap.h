@@ -6,7 +6,7 @@
 /*   By: cdoria <cdoria@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/25 15:47:08 by cdoria            #+#    #+#             */
-/*   Updated: 2022/02/05 01:54:10 by cdoria           ###   ########.fr       */
+/*   Updated: 2022/02/05 15:07:51 by cdoria           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,9 +39,13 @@ typedef struct stack{
 
 void	parse_args(char **args, int argc, t_stack **stack);
 void	ft_pushback(t_stack **lst, t_stack *elem);
-t_stack *ft_lstnew(int data);
 int		ft_atoi(const char *str);
 char	**ft_split(char const *s, char c); // мб удалить
+
+//lst
+t_stack *ft_lstnew(int data, int index);
+t_stack	*ft_lstlast(t_stack *lst);
+void	ft_lstprint(t_stack *stack);
 
 //Stack commands
 void	sa(t_stack **stack);

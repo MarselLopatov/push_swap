@@ -6,7 +6,7 @@
 /*   By: cdoria <cdoria@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/25 16:15:18 by cdoria            #+#    #+#             */
-/*   Updated: 2022/01/25 17:13:07 by cdoria           ###   ########.fr       */
+/*   Updated: 2022/02/05 15:03:51 by cdoria           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,15 @@
 
 void	ft_pushback(t_stack **lst, t_stack *elem)
 {
+	t_stack *tmp;
+
 	if (!lst || !elem)
 		return ;
-	while (lst)
-		lst = &((*lst)->next);
-	*lst = elem;
+	if (!*lst)
+	{
+		*lst = elem;
+		return ;
+	}
+	tmp = ft_lstlast(*lst);
+	tmp->next = elem;
 }

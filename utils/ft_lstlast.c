@@ -1,26 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstnew.c                                        :+:      :+:    :+:   */
+/*   ft_lstlast.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cdoria <cdoria@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/25 16:24:33 by cdoria            #+#    #+#             */
-/*   Updated: 2022/02/05 03:34:34 by cdoria           ###   ########.fr       */
+/*   Created: 2022/02/05 15:01:23 by cdoria            #+#    #+#             */
+/*   Updated: 2022/02/05 15:02:29 by cdoria           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-t_stack *ft_lstnew(int data, int index)
+t_stack	*ft_lstlast(t_stack *lst)
 {
-	t_stack *new;
-	
-	new = malloc (sizeof(t_stack));
-	if (!new)
+	if (!lst)
 		return (NULL);
-	new->data = data;
-	new->index = index;
-	new->next = NULL;
-	return (new);
+	while (lst->next)
+		lst = lst->next;
+	return (lst);
 }
