@@ -6,15 +6,16 @@
 /*   By: cdoria <cdoria@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/03 15:08:09 by cdoria            #+#    #+#             */
-/*   Updated: 2022/02/05 18:27:14 by cdoria           ###   ########.fr       */
+/*   Updated: 2022/02/06 19:25:57 by cdoria           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	rrr(t_stack **stack_a, t_stack **stack_b)
+void	rrr(t_stack **stack_a, t_stack **stack_b, int flag)
 {
-	rra(stack_a);
-	rrb(stack_b);
-	write(1, "rrr\n", 4);
+	rra(stack_a, 0);
+	rrb(stack_b, 0);
+	if (flag)
+		write(1, "rrr\n", 4);
 }

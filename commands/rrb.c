@@ -6,13 +6,13 @@
 /*   By: cdoria <cdoria@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/03 15:07:21 by cdoria            #+#    #+#             */
-/*   Updated: 2022/02/05 18:27:11 by cdoria           ###   ########.fr       */
+/*   Updated: 2022/02/06 19:22:35 by cdoria           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	rrb(t_stack **stack)
+void	rrb(t_stack **stack, int flag)
 {
 	t_stack	*tmp;
 
@@ -24,5 +24,6 @@ void	rrb(t_stack **stack)
 	tmp->next->next = (*stack);
 	(*stack) = tmp->next;
 	tmp->next = NULL;
-	write(1, "rrb\n", 4);
+	if (flag)
+		write(1, "rrb\n", 4);
 }

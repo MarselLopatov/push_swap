@@ -6,13 +6,13 @@
 /*   By: cdoria <cdoria@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/03 14:30:29 by cdoria            #+#    #+#             */
-/*   Updated: 2022/02/05 18:26:53 by cdoria           ###   ########.fr       */
+/*   Updated: 2022/02/06 19:21:57 by cdoria           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	ra(t_stack **stack)
+void	ra(t_stack **stack, int flag)
 {
 	t_stack *tmp;
 
@@ -22,5 +22,6 @@ void	ra(t_stack **stack)
 	*stack = (*stack)->next;
 	tmp->next = NULL;
 	ft_pushback(stack, tmp);
-	write(1, "ra\n", 3);
+	if (flag)
+		write(1, "ra\n", 3);
 }

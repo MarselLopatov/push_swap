@@ -7,6 +7,9 @@ UTILS = ft_atoi.c \
 		ft_lstprint.c \
 		ft_pushback.c \
 		parse_args.c \
+		ft_lstclear.c \
+		ft_exit_error.c \
+		ft_putstr.c \
 
 COMM_PATH = ./commands/
 COMM =	pa.c \

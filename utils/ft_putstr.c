@@ -1,27 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rb.c                                               :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cdoria <cdoria@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/03 14:37:33 by cdoria            #+#    #+#             */
-/*   Updated: 2022/02/06 19:22:10 by cdoria           ###   ########.fr       */
+/*   Created: 2022/02/06 18:23:38 by cdoria            #+#    #+#             */
+/*   Updated: 2022/02/06 18:34:12 by cdoria           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	rb(t_stack **stack, int flag)
+void	ft_putstr(char *str)
 {
-	t_stack *tmp;
+	int	i;
 
-	if (!*stack || !(*stack)->next)
-		return ;
-	tmp = *stack;
-	*stack = (*stack)->next;
-	tmp->next = NULL;
-	ft_pushback(stack, tmp);
-	if (flag)
-		write(1, "rb\n", 3);
+	i = 0;
+	while (str[i])
+	{
+		write(1, &str[i], 1);
+		i++;
+	}
 }

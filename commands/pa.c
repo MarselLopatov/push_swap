@@ -6,13 +6,13 @@
 /*   By: cdoria <cdoria@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/02 22:02:59 by cdoria            #+#    #+#             */
-/*   Updated: 2022/02/05 18:26:40 by cdoria           ###   ########.fr       */
+/*   Updated: 2022/02/06 19:21:21 by cdoria           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	pa(t_stack **from, t_stack **to)
+void	pa(t_stack **from, t_stack **to, int flag)
 {
 	t_stack *tmp;
 
@@ -23,5 +23,6 @@ void	pa(t_stack **from, t_stack **to)
 	(*from)->next = NULL;
 	(*to)->next = (*from);
 	*to = tmp;
-	write(1, "pa\n", 3);
+	if (flag)
+		write(1, "pa\n", 3);
 }

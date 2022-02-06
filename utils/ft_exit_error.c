@@ -1,27 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rb.c                                               :+:      :+:    :+:   */
+/*   ft_exit_error.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cdoria <cdoria@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/03 14:37:33 by cdoria            #+#    #+#             */
-/*   Updated: 2022/02/06 19:22:10 by cdoria           ###   ########.fr       */
+/*   Created: 2022/02/06 18:20:02 by cdoria            #+#    #+#             */
+/*   Updated: 2022/02/06 19:59:30 by cdoria           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	rb(t_stack **stack, int flag)
+void	ft_exit_error(t_stack **stack_a, t_stack **stack_b, int flag)
 {
-	t_stack *tmp;
-
-	if (!*stack || !(*stack)->next)
-		return ;
-	tmp = *stack;
-	*stack = (*stack)->next;
-	tmp->next = NULL;
-	ft_pushback(stack, tmp);
+	if (stack_a)
+		ft_lstclear(stack_a);
+	if (stack_b)
+		ft_lstclear(stack_b);
 	if (flag)
-		write(1, "rb\n", 3);
+		ft_putstr("Error\n");
+	exit (0);
 }

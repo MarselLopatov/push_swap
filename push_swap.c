@@ -6,7 +6,7 @@
 /*   By: cdoria <cdoria@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/25 15:48:49 by cdoria            #+#    #+#             */
-/*   Updated: 2022/02/05 20:34:41 by cdoria           ###   ########.fr       */
+/*   Updated: 2022/02/06 20:01:51 by cdoria           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,13 +32,10 @@ int	main(int argc, char *argv[])
 	
 	stack = NULL;
 	if (argc < 2)
-	{
-		printf("~~~Error~~~ not enoght arguments\n");
-		exit (0);
-	}
+		ft_exit_error(NULL, NULL, 1);
 	parse_args(argv + 1, argc - 1, &stack);
 	ft_lstprint(stack);
 	if (ft_is_sort(stack))
-
+		ft_exit_error(&stack, NULL, 1);
 }
 // ЗАДАЧА. Проверить команды

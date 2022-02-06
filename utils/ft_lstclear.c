@@ -1,27 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rb.c                                               :+:      :+:    :+:   */
+/*   ft_lstclear.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cdoria <cdoria@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/03 14:37:33 by cdoria            #+#    #+#             */
-/*   Updated: 2022/02/06 19:22:10 by cdoria           ###   ########.fr       */
+/*   Created: 2022/02/06 18:30:59 by cdoria            #+#    #+#             */
+/*   Updated: 2022/02/06 18:54:38 by cdoria           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	rb(t_stack **stack, int flag)
+void	ft_lstclear(t_stack **stack)
 {
-	t_stack *tmp;
-
-	if (!*stack || !(*stack)->next)
+	if (!stack || !*stack)
 		return ;
-	tmp = *stack;
-	*stack = (*stack)->next;
-	tmp->next = NULL;
-	ft_pushback(stack, tmp);
-	if (flag)
-		write(1, "rb\n", 3);
+	ft_lstclear(&(*stack)->next);
+	free (*stack);
+	*stack = NULL;
 }

@@ -6,7 +6,7 @@
 /*   By: cdoria <cdoria@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/04 16:40:44 by cdoria            #+#    #+#             */
-/*   Updated: 2022/02/05 18:44:50 by cdoria           ###   ########.fr       */
+/*   Updated: 2022/02/06 20:01:45 by cdoria           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,7 @@ void	check_double(int *arr, int i, int value)
 	while (i >= 0)
 	{
 		if (arr[i] == value)
-		{
-			printf ("~~~~Error~~~~ '%d' duplicate value\n", arr[i]);
-			exit (0);	
-		}
+			ft_exit_error(NULL, NULL, 1);
 		i--;
 	}
 }
@@ -31,19 +28,13 @@ void	valid_arg(char *arg)
 
 	i = 0;	
 	if (arg[i] == '-' && arg[i + 1] == '0')
-	{
-		printf ("~~~~Error~~~~ '%c' non valid\n", arg[i]);
-		exit (0);
-	}
-	if (arg[i] == '-' || arg[i] == '+')
+		ft_exit_error(NULL, NULL, 1);
+	if (arg[i] == '-' && arg[i + 1] != '\0')
 		i++;
 	while(arg[i])
 	{
 		if (arg[i] < '0' || arg[i] > '9' || arg[i] == '-' || arg[i] == '+')
-		{
-			printf ("~~~~Error~~~~ '%c' non valid\n", arg[i]);
-			exit (0);
-		}
+			ft_exit_error(NULL, NULL, 1);
 		i++;
 	}
 }
