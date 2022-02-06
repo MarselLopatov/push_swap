@@ -6,11 +6,11 @@
 /*   By: cdoria <cdoria@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/02 20:37:14 by cdoria            #+#    #+#             */
-/*   Updated: 2022/02/02 22:02:35 by cdoria           ###   ########.fr       */
+/*   Updated: 2022/02/05 18:27:24 by cdoria           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 void	sa(t_stack **stack)
 {

@@ -6,7 +6,7 @@
 /*   By: cdoria <cdoria@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/04 16:40:44 by cdoria            #+#    #+#             */
-/*   Updated: 2022/02/05 15:07:20 by cdoria           ###   ########.fr       */
+/*   Updated: 2022/02/05 18:44:50 by cdoria           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,15 +70,22 @@ void	sort_arr(int *arr, int argc)
 	}
 }
 
-void	create_stack(int *arr, int argc, t_stack **stack)
+void	create_stack(int *arr, int argc, t_stack **stack, char **args)
 {
 	int i;
-	
-	i = 0;
-	while (i < argc)
+	int j;
+
+	j = 0;
+	while (args[j])
 	{
-		ft_pushback(stack, ft_lstnew(arr[i], i));
-		i++;
+		i = 0;
+		while (i < argc)
+		{
+			if (ft_atoi(args[j]) == arr[i])
+				ft_pushback(stack, ft_lstnew(arr[i], i));
+			i++;
+		}
+		j++;
 	}
 }
 
@@ -96,5 +103,5 @@ void	parse_args(char **args, int argc, t_stack **stack)
 		i++;
 	}
 	sort_arr(arr, argc);
-	create_stack(arr, argc, stack);
+	create_stack(arr, argc, stack, args);
 }

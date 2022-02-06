@@ -6,7 +6,7 @@
 /*   By: cdoria <cdoria@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/25 15:47:08 by cdoria            #+#    #+#             */
-/*   Updated: 2022/02/05 15:07:51 by cdoria           ###   ########.fr       */
+/*   Updated: 2022/02/05 18:47:16 by cdoria           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,7 @@ void	pa(t_stack **from, t_stack **to);
 void	pb(t_stack **from, t_stack **to);
 void	ra(t_stack **stack);
 void	rb(t_stack **stack);
+void	rr(t_stack **stack_a, t_stack **stack_b);
 void	rra(t_stack **stack);
 void	rrb(t_stack **stack);
 void	rrr(t_stack **stack_a, t_stack **stack_b);
