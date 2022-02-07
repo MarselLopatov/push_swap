@@ -1,5 +1,12 @@
 NAME	= push_swap
 
+HEADER = push_swap.h
+
+SORT_PATH = ./sort/
+SORT =	ft_sort.c \
+		ft_sort_three.c \
+		ft_sort_five.c \
+
 UTILS_PATH = ./utils/
 UTILS = ft_atoi.c \
 		ft_lstlast.c \
@@ -24,8 +31,7 @@ COMM =	pa.c \
 		sb.c \
 		ss.c
 
-SRCS = push_swap.c $(addprefix $(UTILS_PATH), $(UTILS)) $(addprefix $(COMM_PATH), $(COMM))
-HEADER = push_swap.h
+SRCS = push_swap.c $(addprefix $(UTILS_PATH), $(UTILS)) $(addprefix $(COMM_PATH), $(COMM)) $(addprefix $(SORT_PATH), $(SORT))
 
 OBJ = $(patsubst %.c, %.o, $(SRCS))
 

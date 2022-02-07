@@ -1,24 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_exit_error.c                                    :+:      :+:    :+:   */
+/*   ft_sort_three.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cdoria <cdoria@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/06 18:20:02 by cdoria            #+#    #+#             */
-/*   Updated: 2022/02/07 17:57:39 by cdoria           ###   ########.fr       */
+/*   Created: 2022/02/07 19:39:03 by cdoria            #+#    #+#             */
+/*   Updated: 2022/02/07 19:58:26 by cdoria           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	ft_exit_error(t_stack **stack_a, t_stack **stack_b, int flag)
+void	ft_sort_three(t_stack **stack_a)
 {
-	if (stack_a)
-		ft_lstclear(stack_a);
-	if (stack_b)
-		ft_lstclear(stack_b);
-	if (flag)
-		ft_putstr("Error\n");
-	exit (0);
+	
 }

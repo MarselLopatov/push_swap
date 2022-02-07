@@ -6,7 +6,7 @@
 /*   By: cdoria <cdoria@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/25 15:47:08 by cdoria            #+#    #+#             */
-/*   Updated: 2022/02/06 20:01:02 by cdoria           ###   ########.fr       */
+/*   Updated: 2022/02/07 17:48:43 by cdoria           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,9 @@ int		ft_atoi(const char *str);
 char	**ft_split(char const *s, char c); // мб удалить
 void	ft_exit_error(t_stack **stack_a, t_stack **stack_b, int flag);
 void	ft_putstr(char *str);
+
+//sort
+void	ft_sort(t_stack **stack, int argc);
 
 //lst
 t_stack *ft_lstnew(int data, int index);
