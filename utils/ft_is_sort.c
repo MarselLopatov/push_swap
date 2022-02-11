@@ -1,27 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   pa.c                                               :+:      :+:    :+:   */
+/*   ft_is_sort.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cdoria <cdoria@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/02 22:02:59 by cdoria            #+#    #+#             */
-/*   Updated: 2022/02/11 17:49:03 by cdoria           ###   ########.fr       */
+/*   Created: 2022/02/11 17:41:23 by cdoria            #+#    #+#             */
+/*   Updated: 2022/02/11 17:50:39 by cdoria           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	pa(t_stack **from, t_stack **to, int flag)
+int	ft_is_sort(t_stack *stack)
 {
 	t_stack *tmp;
 
-	if (!*from)
-		return ;
-	tmp = *from;
-	*from = tmp->next;
-	tmp->next = *to;
-	*to = tmp;
-	if (flag)
-		write(1, "pa\n", 3);
+	tmp = stack;
+	while (tmp->next)
+	{
+		if (tmp->index > tmp->next->index)
+			return (0);
+		tmp = tmp->next;
+	}
+	return (1);
 }

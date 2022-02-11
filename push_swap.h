@@ -6,12 +6,12 @@
 /*   By: cdoria <cdoria@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/25 15:47:08 by cdoria            #+#    #+#             */
-/*   Updated: 2022/02/07 17:48:43 by cdoria           ###   ########.fr       */
+/*   Updated: 2022/02/11 18:49:06 by cdoria           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP
-# define PUSH_SWAP
+#ifndef PUSH_SWAP_H
+# define PUSH_SWAP_H
 
 #include <unistd.h>
 #include <stdlib.h>
@@ -31,21 +31,21 @@ typedef struct stack{
 	struct stack 	*next;
 }	t_stack;
 
-// typedef struct stack_info
-// {
-// 	int	index;
-// 	int	flag;
-// }	t_stack_info;
-
 void	parse_args(char **args, int argc, t_stack **stack);
 void	ft_pushback(t_stack **lst, t_stack *elem);
 int		ft_atoi(const char *str);
 char	**ft_split(char const *s, char c); // мб удалить
 void	ft_exit_error(t_stack **stack_a, t_stack **stack_b, int flag);
 void	ft_putstr(char *str);
+int		steps_to_min(t_stack *stack_a, int index);
 
 //sort
+int		ft_is_sort(t_stack *stack);
 void	ft_sort(t_stack **stack, int argc);
+void	ft_sort_three(t_stack **stack_a);
+void	ft_sort_four(t_stack **stack_a, t_stack **stack_b);
+void	ft_sort_five(t_stack **stack_a, t_stack **stack_b);
+void	ft_sort_big(t_stack **stack_a, t_stack **stack_b, int interval, int argc);
 
 //lst
 t_stack *ft_lstnew(int data, int index);

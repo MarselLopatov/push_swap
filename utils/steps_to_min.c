@@ -1,27 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   pa.c                                               :+:      :+:    :+:   */
+/*   steps_to_min.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cdoria <cdoria@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/02 22:02:59 by cdoria            #+#    #+#             */
-/*   Updated: 2022/02/11 17:49:03 by cdoria           ###   ########.fr       */
+/*   Created: 2022/02/11 18:14:00 by cdoria            #+#    #+#             */
+/*   Updated: 2022/02/11 18:15:37 by cdoria           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	pa(t_stack **from, t_stack **to, int flag)
+int	steps_to_min(t_stack *stack_a, int index)
 {
-	t_stack *tmp;
+	int	steps;
 
-	if (!*from)
-		return ;
-	tmp = *from;
-	*from = tmp->next;
-	tmp->next = *to;
-	*to = tmp;
-	if (flag)
-		write(1, "pa\n", 3);
+	steps = 0;
+	while (stack_a)
+	{
+		if (stack_a->index == index)
+			break ;
+		steps++;
+		stack_a = stack_a->next;
+	}
+	if (steps > ft_lstlast(stack_a)->index / 2)
+		return (0);
+	else
+		return (1);
 }

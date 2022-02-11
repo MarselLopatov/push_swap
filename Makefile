@@ -5,7 +5,9 @@ HEADER = push_swap.h
 SORT_PATH = ./sort/
 SORT =	ft_sort.c \
 		ft_sort_three.c \
+		ft_sort_four.c \
 		ft_sort_five.c \
+		ft_sort_big.c \
 
 UTILS_PATH = ./utils/
 UTILS = ft_atoi.c \
@@ -17,6 +19,8 @@ UTILS = ft_atoi.c \
 		ft_lstclear.c \
 		ft_exit_error.c \
 		ft_putstr.c \
+		ft_is_sort.c \
+		steps_to_min.c \
 
 COMM_PATH = ./commands/
 COMM =	pa.c \
@@ -29,7 +33,7 @@ COMM =	pa.c \
 		rrr.c \
 		sa.c \
 		sb.c \
-		ss.c
+		ss.c \
 
 SRCS = push_swap.c $(addprefix $(UTILS_PATH), $(UTILS)) $(addprefix $(COMM_PATH), $(COMM)) $(addprefix $(SORT_PATH), $(SORT))
 

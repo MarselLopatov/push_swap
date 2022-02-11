@@ -6,7 +6,7 @@
 /*   By: cdoria <cdoria@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/03 13:57:35 by cdoria            #+#    #+#             */
-/*   Updated: 2022/02/06 19:21:31 by cdoria           ###   ########.fr       */
+/*   Updated: 2022/02/11 17:49:04 by cdoria           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,7 @@ void	pb(t_stack **from, t_stack **to, int flag)
 		return ;
 	tmp = *from;
 	*from = tmp->next;
-	(*from)->next = NULL;
-	(*to)->next = (*from);
+	tmp->next = *to;
 	*to = tmp;
 	if (flag)
 		write(1, "pb\n", 3);

@@ -1,27 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   pa.c                                               :+:      :+:    :+:   */
+/*   ft_sort_big.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cdoria <cdoria@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/02 22:02:59 by cdoria            #+#    #+#             */
-/*   Updated: 2022/02/11 17:49:03 by cdoria           ###   ########.fr       */
+/*   Created: 2022/02/11 18:45:17 by cdoria            #+#    #+#             */
+/*   Updated: 2022/02/11 18:51:27 by cdoria           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	pa(t_stack **from, t_stack **to, int flag)
+void	ft_sort_big(t_stack **stack_a, t_stack **stack_b, int interval, int argc)
 {
-	t_stack *tmp;
+	int	index;
 
-	if (!*from)
-		return ;
-	tmp = *from;
-	*from = tmp->next;
-	tmp->next = *to;
-	*to = tmp;
-	if (flag)
-		write(1, "pa\n", 3);
+	index = 0;
+	while (*stack_a)
+	{
+		;
+	}
 }
