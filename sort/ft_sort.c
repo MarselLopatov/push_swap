@@ -27,4 +27,7 @@ void	ft_sort(t_stack **stack_a, int argc)
 		ft_sort_five(stack_a, &stack_b);
 	else if (argc >= 6 && argc <= 101)
 		ft_sort_big(stack_a, &stack_b, 15, argc);
+	else if (argc > 101)
+		ft_sort_big(stack_a, &stack_b, 30, argc);
+	ft_exit_error(stack_a, &stack_b, 0);
 }

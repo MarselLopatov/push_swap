@@ -13,14 +13,13 @@ UTILS_PATH = ./utils/
 UTILS = ft_atoi.c \
 		ft_lstlast.c \
 		ft_lstnew.c \
-		ft_lstprint.c \
 		ft_pushback.c \
 		parse_args.c \
 		ft_lstclear.c \
 		ft_exit_error.c \
 		ft_putstr.c \
 		ft_is_sort.c \
-		steps_to_min.c \
+		steps_to_index.c \
 
 COMM_PATH = ./commands/
 COMM =	pa.c \

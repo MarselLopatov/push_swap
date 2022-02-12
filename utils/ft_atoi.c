@@ -6,7 +6,7 @@
 /*   By: cdoria <cdoria@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/25 16:41:41 by cdoria            #+#    #+#             */
-/*   Updated: 2022/02/11 17:50:38 by cdoria           ###   ########.fr       */
+/*   Updated: 2022/02/12 03:26:39 by cdoria           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,10 +31,8 @@ int	ft_atoi(const char *str)
 	}
 	while (str[i] >= '0' && str[i] <= '9')
 	{
-		// if (res * sign > 2147483647)
-		// 	return (-1);
-		// if (res * sign < -2147483648)
-		// 	return (0);
+		if (res * sign > 2147483647 || res * sign < -2147483648)
+			ft_exit_error(NULL, NULL, 1);
 		res = res * 10 + str[i] - '0';
 		i++;
 	}

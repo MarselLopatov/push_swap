@@ -6,7 +6,7 @@
 /*   By: cdoria <cdoria@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/03 14:30:29 by cdoria            #+#    #+#             */
-/*   Updated: 2022/02/06 19:21:57 by cdoria           ###   ########.fr       */
+/*   Updated: 2022/02/12 03:29:47 by cdoria           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ra(t_stack **stack, int flag)
 {
-	t_stack *tmp;
+	t_stack	*tmp;
 
 	if (!*stack || !(*stack)->next)
 		return ;

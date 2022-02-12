@@ -6,7 +6,7 @@
 /*   By: cdoria <cdoria@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/04 16:40:44 by cdoria            #+#    #+#             */
-/*   Updated: 2022/02/11 17:28:06 by cdoria           ###   ########.fr       */
+/*   Updated: 2022/02/12 03:25:18 by cdoria           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,12 +26,12 @@ void	valid_arg(char *arg)
 {
 	int	i;
 
-	i = 0;	
+	i = 0;
 	if (arg[i] == '-' && arg[i + 1] == '0')
 		ft_exit_error(NULL, NULL, 1);
 	if (arg[i] == '-' && arg[i + 1] != '\0')
 		i++;
-	while(arg[i])
+	while (arg[i])
 	{
 		if (arg[i] < '0' || arg[i] > '9' || arg[i] == '-' || arg[i] == '+')
 			ft_exit_error(NULL, NULL, 1);
@@ -63,8 +63,8 @@ void	sort_arr(int *arr, int argc)
 
 void	create_stack(int *arr, int argc, t_stack **stack, char **args)
 {
-	int i;
-	int j;
+	int	i;
+	int	j;
 
 	j = 0;
 	while (args[j])
@@ -83,9 +83,10 @@ void	create_stack(int *arr, int argc, t_stack **stack, char **args)
 void	parse_args(char **args, int argc, t_stack **stack)
 {
 	int	i;
-	int arr[argc];
+	int	*arr;
 
 	i = 0;
+	arr = malloc (sizeof(int) * argc);
 	while (i < argc)
 	{
 		valid_arg(args[i]);
@@ -95,4 +96,5 @@ void	parse_args(char **args, int argc, t_stack **stack)
 	}
 	sort_arr(arr, argc);
 	create_stack(arr, argc, stack, args);
+	free (arr);
 }

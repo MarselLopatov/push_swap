@@ -6,7 +6,7 @@
 /*   By: cdoria <cdoria@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/07 19:49:19 by cdoria            #+#    #+#             */
-/*   Updated: 2022/02/11 18:21:48 by cdoria           ###   ########.fr       */
+/*   Updated: 2022/02/12 03:00:53 by cdoria           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	ft_sort_five(t_stack **stack_a, t_stack **stack_b)
 	{
 		while ((*stack_a)->index != index)
 		{
-			if (steps_to_min(*stack_a, index))
+			if (steps_to_index(*stack_a, index))
 				ra(stack_a, 1);
 			else
 				rra(stack_a, 1);

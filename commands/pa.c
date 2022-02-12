@@ -6,7 +6,7 @@
 /*   By: cdoria <cdoria@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/02 22:02:59 by cdoria            #+#    #+#             */
-/*   Updated: 2022/02/11 17:49:03 by cdoria           ###   ########.fr       */
+/*   Updated: 2022/02/12 03:29:32 by cdoria           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	pa(t_stack **from, t_stack **to, int flag)
 {
-	t_stack *tmp;
+	t_stack	*tmp;
 
 	if (!*from)
 		return ;
