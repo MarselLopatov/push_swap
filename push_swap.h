@@ -6,7 +6,7 @@
 /*   By: cdoria <cdoria@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/25 15:47:08 by cdoria            #+#    #+#             */
-/*   Updated: 2022/02/12 03:29:06 by cdoria           ###   ########.fr       */
+/*   Updated: 2022/02/12 16:17:17 by cdoria           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ void	ft_pushback(t_stack **lst, t_stack *elem);
 int		ft_atoi(const char *str);
 void	ft_exit_error(t_stack **stack_a, t_stack **stack_b, int flag);
 void	ft_putstr(char *str);
-int		steps_to_index(t_stack *stack_a, int index);
+int		steps_to_index(t_stack *stack_a, int index, int flag);
 
 //sort
 int		ft_is_sort(t_stack *stack);

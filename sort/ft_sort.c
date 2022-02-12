@@ -12,6 +12,7 @@
 
 #include "../push_swap.h"
 
+#include <stdio.h>
 void	ft_sort(t_stack **stack_a, int argc)
 {
 	t_stack	*stack_b;

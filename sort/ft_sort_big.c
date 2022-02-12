@@ -6,7 +6,7 @@
 /*   By: cdoria <cdoria@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/11 18:45:17 by cdoria            #+#    #+#             */
-/*   Updated: 2022/02/12 03:23:15 by cdoria           ###   ########.fr       */
+/*   Updated: 2022/02/12 16:20:26 by cdoria           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,19 @@
 
 void	ft_sort_b(t_stack **stack_a, t_stack **stack_b, int max_index)
 {
-	while ((*stack_b))
+	int	place;
+	int	half;
+
+	while (*stack_b)
 	{
+		half = (max_index + 1) / 2;
+		place = steps_to_index(*stack_b, max_index, 1);
 		if ((*stack_b)->index == max_index)
 		{
 			pa(stack_b, stack_a, 1);
 			max_index--;
 		}
-		else if (steps_to_index(*stack_b, max_index))
+		else if (place <= half)
 			rb(stack_b, 1);
 		else
 			rrb(stack_b, 1);
