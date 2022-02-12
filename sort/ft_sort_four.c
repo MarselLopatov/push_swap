@@ -6,17 +6,17 @@
 /*   By: cdoria <cdoria@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/11 15:34:01 by cdoria            #+#    #+#             */
-/*   Updated: 2022/02/12 16:17:39 by cdoria           ###   ########.fr       */
+/*   Updated: 2022/02/12 16:59:22 by cdoria           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	ft_sort_four(t_stack **stack_a, t_stack **stack_b)
+void	ft_sort_four(t_stack **stack_a, t_stack **stack_b, int argc)
 {
 	while ((*stack_a)->index != 0)
 	{
-		if (steps_to_index(*stack_a, 0, 0))
+		if (steps_to_index(*stack_a, 0, 0, argc))
 			ra(stack_a, 1);
 		else
 			rra(stack_a, 1);

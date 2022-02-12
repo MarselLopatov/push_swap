@@ -39,7 +39,7 @@ SRCS = push_swap.c $(addprefix $(UTILS_PATH), $(UTILS)) $(addprefix $(COMM_PATH)
 OBJ = $(patsubst %.c, %.o, $(SRCS))
 
 CC = gcc
-FLAGS = -Wall -Werror -Wextra
+FLAGS = -o2 -Wall -Werror -Wextra
 
 all: $(NAME)
 
