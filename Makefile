@@ -1,4 +1,5 @@
 NAME	= push_swap
+BONUS_NAME = checker
 
 HEADER = push_swap.h
 
@@ -17,9 +18,9 @@ UTILS = ft_atoi.c \
 		parse_args.c \
 		ft_lstclear.c \
 		ft_exit_error.c \
-		ft_putstr.c \
 		ft_is_sort.c \
 		steps_to_index.c \
+		ft_strcmp.c \
 
 COMM_PATH = ./commands/
 COMM =	pa.c \
@@ -35,8 +36,10 @@ COMM =	pa.c \
 		ss.c \
 
 SRCS = push_swap.c $(addprefix $(UTILS_PATH), $(UTILS)) $(addprefix $(COMM_PATH), $(COMM)) $(addprefix $(SORT_PATH), $(SORT))
+SRCS_BONUS = checker.c $(addprefix $(UTILS_PATH), $(UTILS)) $(addprefix $(COMM_PATH), $(COMM)) $(addprefix $(SORT_PATH), $(SORT))
 
 OBJ = $(patsubst %.c, %.o, $(SRCS))
+OBJ_BONUS = $(patsubst %.c, %.o, $(SRCS_BONUS))
 
 CC = gcc
 FLAGS = -o2 -Wall -Werror -Wextra
@@ -44,17 +47,22 @@ FLAGS = -o2 -Wall -Werror -Wextra
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	${CC} $(OBJ) -I $(HEADER) -o $@
+	$(CC) $(OBJ) -I $(HEADER) -o $@
 
 %.o: %.c $(HEADER)
 	$(CC) $(FLAGS) -c $< -o $@
 
+bonus: $(BONUS_NAME)
+
+$(BONUS_NAME): $(OBJ_BONUS)
+	$(CC) $(OBJ_BONUS) -I $(HEADER) -o $@
+
 clean:  
-	rm -rf $(OBJ)
+	rm -rf $(OBJ) $(OBJ_BONUS)
 
 fclean: clean
-	rm -rf $(NAME)
+	rm -rf $(NAME) $(BONUS_NAME)
 
 re: fclean all
 
-.PHONY: all clean fclean re
+.PHONY: all clean fclean re bonus

@@ -6,37 +6,39 @@
 /*   By: cdoria <cdoria@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/04 16:40:44 by cdoria            #+#    #+#             */
-/*   Updated: 2022/02/12 03:25:18 by cdoria           ###   ########.fr       */
+/*   Updated: 2022/02/15 13:43:53 by cdoria           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	check_double(int *arr, int i, int value)
+int	check_double(int *arr, int i, int value)
 {
 	while (i >= 0)
 	{
 		if (arr[i] == value)
-			ft_exit_error(NULL, NULL, 1);
+			return (0);
 		i--;
 	}
+	return (1);
 }
 
-void	valid_arg(char *arg)
+int	valid_arg(char *arg)
 {
 	int	i;
 
 	i = 0;
 	if (arg[i] == '-' && arg[i + 1] == '0')
-		ft_exit_error(NULL, NULL, 1);
+		return (0);
 	if (arg[i] == '-' && arg[i + 1] != '\0')
 		i++;
 	while (arg[i])
 	{
 		if (arg[i] < '0' || arg[i] > '9' || arg[i] == '-' || arg[i] == '+')
-			ft_exit_error(NULL, NULL, 1);
+			return (0);
 		i++;
 	}
+	return (1);
 }
 
 void	sort_arr(int *arr, int argc)
@@ -89,9 +91,17 @@ void	parse_args(char **args, int argc, t_stack **stack)
 	arr = malloc (sizeof(int) * argc);
 	while (i < argc)
 	{
-		valid_arg(args[i]);
+		if (!valid_arg(args[i]))
+		{
+			free (arr);
+			ft_exit_error(NULL, NULL, 1);
+		}
 		arr[i] = ft_atoi(args[i]);
-		check_double(arr, i - 1, arr[i]);
+		if (!check_double(arr, i - 1, arr[i]))
+		{
+			free (arr);
+			ft_exit_error(NULL, NULL, 1);
+		}
 		i++;
 	}
 	sort_arr(arr, argc);
