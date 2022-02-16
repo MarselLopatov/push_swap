@@ -41,7 +41,7 @@ int	parse_commands(char *buf, t_stack **stack_a, t_stack **stack_b)
 	return (1);
 }
 
-void	ft_memset(int ch, char *str, int n)
+void	ft_setzero(int ch, char *str, int n)
 {
 	int	i;
 
@@ -57,7 +57,7 @@ int	accept_input(t_stack **stack_a, t_stack **stack_b)
 	char		buf[5];
 
 	i = 0;
-	ft_memset(0, buf, 4);
+	ft_setzero(0, buf, 4);
 	while (1)
 	{
 		if (i > 4)
@@ -67,7 +67,7 @@ int	accept_input(t_stack **stack_a, t_stack **stack_b)
 		{
 			if (!parse_commands(buf, stack_a, stack_b))
 				return (1);
-			ft_memset(0, buf, 4);
+			ft_setzero(0, buf, 4);
 			i = -1;
 		}
 		if (ret == 0)
@@ -88,7 +88,7 @@ int	main(int argc, char *argv[])
 	parse_args(argv + 1, argc - 1, &stack_a);
 	if (!accept_input(&stack_a, &stack_b))
 		ft_exit_error(&stack_a, &stack_b, 1);
-	if (!ft_is_sort(stack_a))
+	if (!ft_is_sort(stack_a, argc - 2))
 		write(1, "KO\n", 3);
 	else
 		write(1, "OK\n", 3);

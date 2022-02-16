@@ -21,7 +21,7 @@ void	ft_sort_four(t_stack **stack_a, t_stack **stack_b, int argc)
 		else
 			rra(stack_a, 1);
 	}
-	if (ft_is_sort(*stack_a))
+	if (ft_is_sort(*stack_a, argc - 1))
 		return ;
 	pb(stack_a, stack_b, 1);
 	ft_sort_three(stack_a);

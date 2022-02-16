@@ -20,7 +20,7 @@ int	main(int argc, char *argv[])
 	if (argc < 2)
 		ft_exit_error(NULL, NULL, 0);
 	parse_args(argv + 1, argc - 1, &stack);
-	if (ft_is_sort(stack))
+	if (ft_is_sort(stack, argc - 2))
 		ft_exit_error(&stack, NULL, 0);
 	ft_sort(&stack, argc - 1);
 }

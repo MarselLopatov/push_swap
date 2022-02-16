@@ -31,7 +31,7 @@ int		steps_to_index(t_stack *stack_a, int index, int flag, int argc);
 int		ft_strcmp(const char *s1, const char *s2);
 
 //sort
-int		ft_is_sort(t_stack *stack);
+int		ft_is_sort(t_stack *stack, int argc);
 void	ft_sort(t_stack **stack, int argc);
 void	ft_sort_three(t_stack **stack_a);
 void	ft_sort_four(t_stack **stack_a, t_stack **stack_b, int argc);

@@ -32,6 +32,6 @@ void	ft_sort_five(t_stack **stack_a, t_stack **stack_b, int argc)
 	ft_sort_three(stack_a);
 	pa(stack_b, stack_a, 1);
 	pa(stack_b, stack_a, 1);
-	if (!ft_is_sort(*stack_a))
+	if (!ft_is_sort(*stack_a, argc - 1))
 		sa(stack_a, 1);
 }
