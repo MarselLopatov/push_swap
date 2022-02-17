@@ -6,7 +6,7 @@
 /*   By: cdoria <cdoria@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/25 15:47:08 by cdoria            #+#    #+#             */
-/*   Updated: 2022/02/15 12:40:33 by cdoria           ###   ########.fr       */
+/*   Updated: 2022/02/17 20:22:49 by cdoria           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include <unistd.h>
 # include <stdlib.h>
+# include <limits.h>
 
 typedef struct stack{
 	int				data;
@@ -25,10 +26,11 @@ typedef struct stack{
 //utils
 void	parse_args(char **args, int argc, t_stack **stack);
 void	ft_pushback(t_stack **lst, t_stack *elem);
-int		ft_atoi(const char *str);
+long	ft_atoi(const char *str);
 void	ft_exit_error(t_stack **stack_a, t_stack **stack_b, int flag);
 int		steps_to_index(t_stack *stack_a, int index, int flag, int argc);
 int		ft_strcmp(const char *s1, const char *s2);
+char	*get_next_line(int fd);
 
 //sort
 int		ft_is_sort(t_stack *stack, int argc);

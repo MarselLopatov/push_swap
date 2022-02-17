@@ -6,7 +6,7 @@
 /*   By: cdoria <cdoria@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/11 17:41:23 by cdoria            #+#    #+#             */
-/*   Updated: 2022/02/12 16:04:09 by cdoria           ###   ########.fr       */
+/*   Updated: 2022/02/17 20:28:48 by cdoria           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 int	ft_is_sort(t_stack *stack, int argc)
 {
 	t_stack	*tmp;
-	int	i;
+	int		i;
 
 	i = 0;
 	tmp = stack;

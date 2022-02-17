@@ -6,7 +6,7 @@
 /*   By: cdoria <cdoria@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/04 16:40:44 by cdoria            #+#    #+#             */
-/*   Updated: 2022/02/15 13:43:53 by cdoria           ###   ########.fr       */
+/*   Updated: 2022/02/17 20:28:10 by cdoria           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,8 @@ int	valid_arg(char *arg)
 			return (0);
 		i++;
 	}
+	if (ft_atoi(arg) < INT_MIN || ft_atoi(arg) > INT_MAX)
+		return (0);
 	return (1);
 }
 

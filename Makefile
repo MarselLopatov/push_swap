@@ -10,6 +10,11 @@ SORT =	ft_sort.c \
 		ft_sort_five.c \
 		ft_sort_big.c \
 
+GNL_PATH = ./get_next_line/
+GNL = 	get_next_line.c \
+		get_next_line_utils.c \
+
+
 UTILS_PATH = ./utils/
 UTILS = ft_atoi.c \
 		ft_lstlast.c \
@@ -36,7 +41,7 @@ COMM =	pa.c \
 		ss.c \
 
 SRCS = push_swap.c $(addprefix $(UTILS_PATH), $(UTILS)) $(addprefix $(COMM_PATH), $(COMM)) $(addprefix $(SORT_PATH), $(SORT))
-SRCS_BONUS = checker.c $(addprefix $(UTILS_PATH), $(UTILS)) $(addprefix $(COMM_PATH), $(COMM)) $(addprefix $(SORT_PATH), $(SORT))
+SRCS_BONUS = checker.c $(addprefix $(UTILS_PATH), $(UTILS)) $(addprefix $(COMM_PATH), $(COMM)) $(addprefix $(SORT_PATH), $(SORT)) $(addprefix $(GNL_PATH), $(GNL))
 
 OBJ = $(patsubst %.c, %.o, $(SRCS))
 OBJ_BONUS = $(patsubst %.c, %.o, $(SRCS_BONUS))

@@ -6,7 +6,7 @@
 /*   By: cdoria <cdoria@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/25 15:48:49 by cdoria            #+#    #+#             */
-/*   Updated: 2022/02/12 16:43:18 by cdoria           ###   ########.fr       */
+/*   Updated: 2022/02/17 19:54:56 by cdoria           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int	main(int argc, char *argv[])
 	t_stack	*stack;
 
 	stack = NULL;
-	if (argc < 2)
+	if (argc == 1)
 		ft_exit_error(NULL, NULL, 0);
 	parse_args(argv + 1, argc - 1, &stack);
 	if (ft_is_sort(stack, argc - 2))
