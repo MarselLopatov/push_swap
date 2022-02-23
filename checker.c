@@ -6,7 +6,7 @@
 /*   By: cdoria <cdoria@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/12 23:54:01 by cdoria            #+#    #+#             */
-/*   Updated: 2022/02/17 19:54:28 by cdoria           ###   ########.fr       */
+/*   Updated: 2022/02/23 15:48:46 by cdoria           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,4 +72,5 @@ int	main(int argc, char *argv[])
 		write(1, "KO\n", 3);
 	else
 		write(1, "OK\n", 3);
+	ft_exit_error(&stack_a, &stack_b, 0);
 }
